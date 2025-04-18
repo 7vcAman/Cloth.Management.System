@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloth Management System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"/>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            jost: ['Jost', 'sans-serif'],
+          },
+          colors: {
+            'primary': '#EE1C47',
+            'secondary': '#2c2c2c',
+            'body': '#333c56',
+          },
+        },
+      }
+    }
+  </script>
+
+  <style type="text/tailwindcss">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'jost', sans-serif;
+      list-style: none;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-secondary">
+
+    <script>
+        const toggleBtn = document.getElementById("menu-toggle");
+        const navMenu = document.getElementById("navmenu");
+      
+        toggleBtn.addEventListener("click", () => {
+          navMenu.classList.toggle("hidden");
+        });
+      </script>
+      
+<!-- Header -->
+<header class="fixed w-full top-0 right-0 z-[10000] flex items-center justify-between py-5 px-[10%] bg-white shadow-md">
+    <a href="#" class="logo">
+      <img src="image-logo.png" alt="Logo" class="max-w-[120px] h-auto">
+    </a>
+  
+    <!-- Menu button (mobile) -->
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-2xl text-secondary focus:outline-none">
+        <i class='bx bx-menu'></i>
+      </button>
+    </div>
+  
+    <!-- Nav menu -->
+    <ul id="navmenu" class="navmenu hidden md:flex absolute md:static top-[100%] left-0 w-full md:w-auto bg-white md:bg-transparent md:flex-row flex-col items-center md:items-start px-10 md:px-0 py-5 md:py-0 shadow md:shadow-none">
+      <li><a href="Homepage.html" class="text-sm px-5 capitalize hover:text-primary transition block py-2">home</a></li>
+      <li><a href="products.html" class="text-sm px-5 capitalize hover:text-primary transition block py-2">products</a></li>
+      <li><a href="checkout.html" class="text-sm px-5 capitalize hover:text-primary transition block py-2">cart</a></li>
+      <li><a href="contact.html" class="text-sm px-5 capitalize hover:text-primary transition block py-2">contact</a></li>
+      <li><a href="signin.html" class="text-sm px-5 capitalize hover:text-primary transition block py-2">SignIn</a></li>
+    </ul>
+  
+    <!-- Nav icons -->
+    <div class="nav-icon hidden md:flex items-center">
+      <i class='bx bx-search text-xl mr-5 hover:text-primary'></i>
+      <i class='bx bx-user text-xl mr-5 hover:text-primary'></i>
+      <i class='bx bx-cart text-xl hover:text-primary'></i>
+    </div>
+  </header>
+  
+<!-- Hero Section -->
+<section class="w-full h-screen bg-[url('image-banner-3.png')] bg-cover bg-center grid items-center pt-20">
+  <div class="px-[10%]">
+    <h5 class="text-primary text-sm font-medium capitalize">Winter Collection</h5>
+    <h1 class="text-black text-[65px] font-semibold leading-tight">New Winter <br> Collection 2025</h1>
+    <p class="text-body text-xl italic my-5">There's Nothing like Trend</p>
+    <a href="#" class="inline-block text-black border-2 border-black py-3 px-6 capitalize font-medium hover:bg-black hover:text-white transition">Shop Now <i class='bx bx-right-arrow-alt align-middle'></i></a>
+  </div>
+  <div class="absolute top-[85%] right-[11%]">
+    <a href="#trending"><i class='bx bx-down-arrow-alt text-xl border-2 p-3 rounded-full hover:bg-secondary hover:text-white transition'></i></a>
+  </div>
+</section>
+
+<!-- Trending Products -->
+<section id="trending" class="py-12 px-[10%]">
+  <h2 class="text-2xl font-semibold text-center mb-10">Our Trending <span class="text-primary">Products</span></h2>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    
+    <!-- Product Card -->
+    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+      <img src="image-1.jpg" alt="Product 1" class="w-full">
+      <div class="absolute top-3 left-3 bg-primary text-white text-xs px-2 py-1 rounded">Sale</div>
+      <div class="absolute top-3 right-3 text-lg text-gray-600"><i class='bx bx-heart'></i></div>
+      <div class="p-4">
+        <div class="flex text-yellow-400 text-sm mb-2">
+          <i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bxs-star-half'></i>
+        </div>
+        <h4 class="text-lg font-semibold mb-1">Track Set</h4>
+        <p class="text-gray-500 text-sm mb-3">$99 - $129</p>
+        <button class="w-full py-2 bg-primary text-white rounded hover:bg-opacity-90 transition">Add to Cart</button>
+      </div>
+    </div>
+    
+    <!-- Product 2 -->
+    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+      <img src="image-2.jpg" alt="Product 2" class="w-full">
+      <div class="absolute top-3 left-3 bg-green-500 text-white text-xs px-2 py-1 rounded">New</div>
+      <div class="absolute top-3 right-3 text-lg text-gray-600"><i class='bx bx-heart'></i></div>
+      <div class="p-4">
+        <div class="flex text-yellow-400 text-sm mb-2">
+          <i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bxs-star-half'></i>
+        </div>
+        <h4 class="text-lg font-semibold mb-1">Formal Men Lowers</h4>
+        <p class="text-gray-500 text-sm mb-3">$99 - $129</p>
+        <button class="w-full py-2 bg-primary text-white rounded hover:bg-opacity-90 transition">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+      <img src="image-3.jpg" alt="Product 3" class="w-full">
+      <div class="absolute top-3 right-3 text-lg text-gray-600"><i class='bx bx-heart'></i></div>
+      <div class="p-4">
+        <div class="flex text-yellow-400 text-sm mb-2">
+          <i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bxs-star-half'></i>
+        </div>
+        <h4 class="text-lg font-semibold mb-1">Half Running Suit</h4>
+        <p class="text-gray-500 text-sm mb-3">$99 - $129</p>
+        <button class="w-full py-2 bg-primary text-white rounded hover:bg-opacity-90 transition">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    
+    <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="image-4.jpg" alt="Product 4" class="w-full">
+        <div class="absolute top-3 left-3 bg-orange-500 text-white text-xs px-2 py-1 rounded">Hot</div>
+        <div class="absolute top-3 right-3 text-lg text-gray-600"><i class='bx bx-heart'></i></div>
+        <div class="p-4">
+          <div class="flex text-yellow-400 text-sm mb-2">
+            <i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bxs-star-half'></i>
+          </div>
+          <h4 class="text-lg font-semibold mb-1">Half Fancy Lady Dress</h4>
+          <p class="text-gray-500 text-sm mb-3">$99 - $129</p>
+          <button class="w-full py-2 bg-primary text-white rounded hover:bg-opacity-90 transition">Add to Cart</button>
+        </div>
+      </div>
+
+<!-- Product 5 -->
+
+      <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="image-5.jpg" alt="Product 4" class="w-full">
+        <div class="absolute top-3 left-3 bg-orange-500 text-white text-xs px-2 py-1 rounded">Hot</div>
+        <div class="absolute top-3 right-3 text-lg text-gray-600"><i class='bx bx-heart'></i></div>
+        <div class="p-4">
+          <div class="flex text-yellow-400 text-sm mb-2">
+            <i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bxs-star-half'></i>
+          </div>
+          <h4 class="text-lg font-semibold mb-1">Flix Flox Jeans</h4>
+          <p class="text-gray-500 text-sm mb-3">$99 - $129</p>
+          <button class="w-full py-2 bg-primary text-white rounded hover:bg-opacity-90 transition">Add to Cart</button>
+        </div>
+      </div>
+
+<!-- Product 6 -->
+
+      <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="image-6.jpg" alt="Product 4" class="w-full">
+        <div class="absolute top-3 left-3 bg-orange-500 text-white text-xs px-2 py-1 rounded">Hot</div>
+        <div class="absolute top-3 right-3 text-lg text-gray-600"><i class='bx bx-heart'></i></div>
+        <div class="p-4">
+          <div class="flex text-yellow-400 text-sm mb-2">
+            <i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bxs-star-half'></i>
+          </div>
+          <h4 class="text-lg font-semibold mb-1">Fancy Salwar Suits</h4>
+          <p class="text-gray-500 text-sm mb-3">$99 - $129</p>
+          <button class="w-full py-2 bg-primary text-white rounded hover:bg-opacity-90 transition">Add to Cart</button>
+        </div>
+      </div>
+
+<!-- Product 7 -->
+
+      <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="image-7.jpg" alt="Product 4" class="w-full">
+        <div class="absolute top-3 left-3 bg-orange-500 text-white text-xs px-2 py-1 rounded">Hot</div>
+        <div class="absolute top-3 right-3 text-lg text-gray-600"><i class='bx bx-heart'></i></div>
+        <div class="p-4">
+          <div class="flex text-yellow-400 text-sm mb-2">
+            <i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bxs-star-half'></i>
+          </div>
+          <h4 class="text-lg font-semibold mb-1">Printed Straight Kurta</h4>
+          <p class="text-gray-500 text-sm mb-3">$99 - $129</p>
+          <button class="w-full py-2 bg-primary text-white rounded hover:bg-opacity-90 transition">Add to Cart</button>
+        </div>
+      </div>
+
+<!-- Product 8 -->
+
+      <div class="relative bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="image-8.jpg" alt="Product 4" class="w-full">
+        <div class="absolute top-3 left-3 bg-orange-500 text-white text-xs px-2 py-1 rounded">Hot</div>
+        <div class="absolute top-3 right-3 text-lg text-gray-600"><i class='bx bx-heart'></i></div>
+        <div class="p-4">
+          <div class="flex text-yellow-400 text-sm mb-2">
+            <i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bxs-star-half'></i>
+          </div>
+          <h4 class="text-lg font-semibold mb-1">Collot Full Dress</h4>
+          <p class="text-gray-500 text-sm mb-3">$99 - $129</p>
+          <button class="w-full py-2 bg-primary text-white rounded hover:bg-opacity-90 transition">Add to Cart</button>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-10 px-[10%] bg-gray-100 text-secondary text-sm text-center">
+  <p>&copy; 2025 Ecommerce Responsive full website. All rights reserved.</p>
+</footer>
+
+<script src="main.js"></script>
+
+</body>
+</html>
